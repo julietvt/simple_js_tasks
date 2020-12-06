@@ -69,3 +69,27 @@ if (x % 2 == 0) {
 
 // Задача 1. начислить 10% от суммы если продажи больше 500$
 // Задача 2. покупка: товар1 по сумме 10 грн, товар 2 по сумме 15 грн. начислить скидку 5% если сумма больше 200 грн
+
+//task1
+let sum_sales;
+sum_sales = parseFloat(prompt('Enter your sale'));
+if (sum_sales >= 500) {
+  sum_sales = sum_sales * 1.1;
+}
+console.log(sum_sales);
+
+//task2
+let price1 = 10,
+  price2 = 15,
+  count1,
+  count2;
+let sale = 0.05;
+let sum;
+let limit = 200;
+count1 = parseInt(prompt('Enter count of product1'));
+count2 = parseInt(prompt('Enter count of product2'));
+sum = count1 * price1 + count2 * price2;
+if (sum >= limit) {
+  sum = sum * (1 - sale);
+}
+console.log(sum);

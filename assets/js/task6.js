@@ -93,6 +93,7 @@ for (i = 0; i < a.length; i++) {
   }
 }
 //task3
+console.log('-------------');
 for (i = 0; i < a.length; i++) {
   if (a[i] < 0) {
     a[i] = a[i] * 2; // a[i] *= 2;
@@ -103,3 +104,67 @@ for (i = 0; i < a.length; i++) {
 console.log(a);
 
 //task4
+console.log('-------------');
+
+// Найти максимальный элемент массива
+let maxElem = a[0];
+let indexMaxElem = 0;
+for (i = 0; i < a.length; i++) {
+  if (a[i] > maxElem) {
+    maxElem = a[i];
+    indexMaxElem = i;
+  }
+}
+console.log('Max of array = ', maxElem, ', index = ', indexMaxElem);
+
+//4 5 9 0 1 4 100
+//maxElem=4;
+//5 > 4???  maxElem = 5
+//9 > 5 ??   maxElem = 9
+//0 > 9 >??  maxElem = 9
+//1 > 9 ?? maxElem = 9
+//4 > 9 ?? maxElem = 9
+//100 > 9 ?? maxElem = 100
+
+// Найти минимальный элемент массива
+let minElem = a[0];
+let indexMinElem = 0;
+for (i = 0; i < a.length; i++) {
+  if (a[i] < minElem) {
+    minElem = a[i];
+    indexMinElem = i;
+  }
+}
+console.log('Min of array = ', minElem, ', index = ', indexMinElem);
+
+// task4
+// сумма между соседями
+let sumNeighbors = [];
+for (i = 0; i < a.length - 1; i++) {
+  sumNeighbors[i] = a[i] + a[i + 1];
+}
+//ищем максимальную сумму
+let maxNeighbor = sumNeighbors[0];
+for (i = 0; i < a.length; i++) {
+  if (sumNeighbors[i] > maxNeighbor) {
+    maxNeighbor = sumNeighbors[i];
+  }
+}
+console.log('Result: ', maxNeighbor);
+//1 var
+​let maxSum = 0; 
+for (let i = 0; i < array.length-1; i++){ 
+    if (array[i] + array[i + 1] > maxSum) { 
+        maxSum = array[i] + array[i + 1]; 
+    } 
+}
+//2 var
+let a = [1, 0, -4, 7, 0, 4, -8, 9, 0, -3];
+let sum = 0;
+for (let i = 0; i < a.length-1; i = i + 2) {
+  console.log(`Сумма соседних элементов ${a[i] + a[i + 1]}`);
+  if (sum < a[i] + a[i + 1]) {
+    sum = a[i] + a[i + 1];
+  }
+}
+console.log("Max", sum);

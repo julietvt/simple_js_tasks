@@ -151,6 +151,7 @@ for (i = 0; i < a.length; i++) {
   }
 }
 console.log('Result: ', maxNeighbor);
+/*
 //1 var
 ​let maxSum = 0; 
 for (let i = 0; i < array.length-1; i++){ 
@@ -168,3 +169,4 @@ for (let i = 0; i < a.length-1; i = i + 2) {
   }
 }
 console.log("Max", sum);
+*/

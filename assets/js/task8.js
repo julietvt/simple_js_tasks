@@ -1,3 +1,5 @@
+'use strict';
+
 function SayHi1() {
   console.log('Hello');
 }
@@ -149,3 +151,48 @@ switch (op) {
     }
     break;
 }
+
+// рекурсия
+
+function MyPow2(x, y) {
+  if (y == 1) {
+    return x;
+  } else {
+    return x * MyPow2(x, y - 1);
+  }
+}
+
+// рекурсия сумма чисел от x до y
+
+function MySum10(x, y) {
+  if (y == 1) {
+    return x;
+  } else {
+    return x + MySum10(x, y - 1);
+  }
+}
+
+// 1 тип function declaration
+function Fun1(a, b) {
+  return a + b;
+}
+// 2 type: function expression
+
+const sumFunExpression = function (a, b) {
+  return a + b;
+};
+
+console.log('funExpression:', sumFunExpression(2, 3));
+
+// 3 type: array function (стрелочные функции)
+// !!!!! нет this
+
+const sumArrayFun = (a, b) => {
+  return a + b;
+};
+
+console.log(sumArrayFun(2, 2));
+
+const sumArrayFun2 = (a, b) => a + b;
+
+console.log(sumArrayFun2(2, 2));

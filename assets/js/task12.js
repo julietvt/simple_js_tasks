@@ -122,11 +122,11 @@ function myFunction4(arr) {
 }
 
 //функция редьюсер для суммы элементов массива
-const reducer1 = (accumulator, currentValue) => accumulator + currentValue;
+const reducer1 = (sum, elem) => sum + elem;
 //функция редьюсер для произведения элементов массива
-const reducer2 = (accumulator, currentValue) => accumulator * currentValue;
+const reducer2 = (mult, elem) => mult * elem;
 // сумма квадратов
-const reducer3 = (accumulator, currentValue) => accumulator + currentValue ** 2;
+const reducer3 = (result, elem) => result + elem ** 2;
 
 let testArray = [2, 7, 0, -9, 4, 6, 0, -4, -2, 8, 1];
 console.log('NEW TASKS');

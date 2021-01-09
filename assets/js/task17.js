@@ -41,10 +41,10 @@ const fish = {
 // прототипное наследование
 
 //функция конструктор
-function Person(name, surname, age) {
-  this.name = name;
-  this.surname = surname;
-  this.age = age;
+function Person(name1, surname1, age1) {
+  this.name = name1;
+  this.surname = surname1;
+  this.age = age1;
   this.sayHi = function () {
     return `Hi, my name is ${this.name}`;
   };

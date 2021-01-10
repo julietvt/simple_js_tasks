@@ -61,3 +61,82 @@ p1.getPoint();
 p2.getPoint();
 
 p2.getPointPatternParent();
+
+// задача
+/*
+User : name, password, email. вывод имя+почта через :
+ 
+1 Stud : массив оценок. 1функция: вывод всех оценок 2функция: подсчитать средний бал 
+
+super(name, password)
+
+2 Teacher количество часов за год (800 по ум), зарплата. функция: премия если количество часов больше 800
+*/
+
+class User {
+  constructor(name, password, email) {
+    this.name = name;
+    this.password = password;
+    this.email = email;
+  }
+  getUserInfo() {
+    return `${this.name}  ${this.email}`;
+  }
+}
+
+class Stud extends User {
+  constructor(name, password, email, marks) {
+    super(name, password, email);
+    this.marks = marks;
+  }
+  outMarks() {
+    console.log(this.marks);
+  }
+  avMark() {
+    let sum = 0;
+    for (let i = 0; i < this.marks.length; i++) {
+      sum += this.marks[i];
+    }
+    return sum / this.marks.length;
+    //return (this.marks.reduce((a,b) => a+b))/this.marks.length);
+  }
+}
+
+class Teacher extends User {
+  constructor(name, password, email, hours, salary) {
+    super(name, password, email);
+    this.hours = hours || 800;
+    this.salary = salary;
+  }
+  funAddMoney(prize) {
+    if (this.hours >= 800) {
+      this.salary += prize;
+    }
+  }
+  getSalaryTeacher() {
+    console.log(this.salary);
+  }
+}
+
+const Ivanov = new Stud('Ivan Inanov', 'qwerty', 'iva@mail.com', [
+  5,
+  4,
+  5,
+  5,
+  4,
+  5,
+]);
+console.log(Ivanov.getUserInfo());
+Ivanov.avMark();
+
+const KarsonTeacher = new Teacher(
+  'Karsonchik',
+  'zxcv',
+  'karsov@mail.com',
+  1000,
+  15000
+);
+console.log(KarsonTeacher.getUserInfo());
+KarsonTeacher.getSalaryTeacher();
+KarsonTeacher.funAddMoney(5000);
+KarsonTeacher.getSalaryTeacher();

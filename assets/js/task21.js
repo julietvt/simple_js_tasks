@@ -140,3 +140,55 @@ console.log(KarsonTeacher.getUserInfo());
 KarsonTeacher.getSalaryTeacher();
 KarsonTeacher.funAddMoney(5000);
 KarsonTeacher.getSalaryTeacher();
+
+// проверка принадлежности обьекта классу определенному включая наследование
+console.log(Ivanov instanceof Stud);
+console.log(Ivanov instanceof User);
+console.log(KarsonTeacher instanceof User);
+console.log(KarsonTeacher instanceof Stud);
+console.log(KarsonTeacher instanceof Teacher);
+
+// !!!!!!!!!!!!!!!!!!
+// super нет у стрелочных функций
+
+// static - не для 1 обьекта а для всех обьектов класса
+// какието действия и опреции над всеми обьектами класса
+// пр. количество студентов
+// пр. средний бал в группе студентов
+// пр. среднее количество часов по препадам
+// пр. общая сумма выплат препадам
+// пр студен с максимальным баллом
+// пр только отличников вывести
+// пр только бюджетников вывести
+
+// ключевое слово static
+// статическими могут быть и свойства (поле) и метод
+
+/*
+Задание
+
+класс Художник (name,info)
+класс Картина (pname, year)
+
+реализовать механизм наследование
+
+подсчитать количество художников в базе (static)
+подсчитать количество картин в базе (static)
+
+* подсчитать количество картин у каждого художников
+*/
+
+class Artist {
+  static countArtist = 0;
+  constructor(name, info = 'no info') {
+    this.name = name;
+    this.info = info;
+  }
+}
+
+class Picture {
+  constructor(name, year = 2021) {
+    this.name = name;
+    this.year = year;
+  }
+}

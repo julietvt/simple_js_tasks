@@ -1,3 +1,4 @@
+/*
 var rect = document.getElementById('rect');
 
 rect.addEventListener('click', handlerFun2);
@@ -31,8 +32,26 @@ function handlerFun2(e) {
   }
 }
 
-/* Event
-target: указывает на элемент, на котором было вызвано событие
-
-type: указывает на имя события
+// Event
+//target: указывает на элемент, на котором было вызвано событие
+//type: указывает на имя события
 */
+
+const blocks = document.querySelectorAll('.changeColor');
+
+//1 Задание по клику изменить цвет
+
+for (let elem of blocks) {
+  elem.addEventListener('click', funChangeColor1);
+}
+
+function funChangeColor1(e) {
+  e.target.style.backgroundColor = 'yellow';
+  e.target.addEventListener('click', funChangeColor2);
+}
+
+function funChangeColor2(e) {
+  e.target.style.backgroundColor = 'purple';
+  e.target.removeEventListener('click', funChangeColor2);
+  e.target.addEventListener('click', funChangeColor1);
+}

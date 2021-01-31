@@ -42,6 +42,11 @@ const blocks = document.querySelectorAll('.changeColor');
 //1 Задание по клику изменить цвет
 
 for (let elem of blocks) {
+  elem.insertAdjacentHTML(
+    'afterbegin',
+    '<button class="remove_elem">X</button>'
+  );
+  elem.firstChild.onclick = () => elem.remove();
   elem.addEventListener('click', funChangeColor1);
 }
 

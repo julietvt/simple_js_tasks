@@ -25,3 +25,22 @@ input[name='task'] {
 .invalidStyle {
   border-color: red;
 }
+
+.slider {
+  width: 300px;
+  height: 15px;
+  margin: 5px;
+  background-color: gray;
+  border-radius: 5px;
+}
+
+.thumb {
+  width: 10px;
+  height: 25px;
+  border-radius: 3px;
+  background-color: blue;
+  cursor: pointer;
+  left: 10px;
+  top: -5px;
+  position: relative;
+}

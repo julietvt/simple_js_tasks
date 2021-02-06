@@ -40,7 +40,7 @@ input[name='task'] {
   border-radius: 3px;
   background-color: blue;
   cursor: pointer;
-  left: 10px;
+  left: 0px;
   top: -5px;
   position: relative;
 }
